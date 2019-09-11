@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+
+mdport=5901
+( sleep 5; vncviewer -config ~/.vnc/tunnel.vnc ) &
+echo "establishing a tunnel between lbminidaq2-14:$mdport and localhost:5900"
+st ssh md2 -L 5900:localhost:$mdport

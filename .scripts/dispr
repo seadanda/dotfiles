@@ -1,0 +1,27 @@
+#!/bin/zsh
+#disp
+#dmenu script to select display settings
+
+DPNAME=$(xrandr | grep -v disconnected | grep DP | grep -v eDP)
+eDPNAME=$(xrandr | grep -v disconnected | grep eDP)
+HDMINAME=$(xrandr | grep -v disconnected | grep HDMI)
+DPNAME=${DPNAME%% *}
+eDPNAME=${eDPNAME%% *}
+HDMINAME=${HDMINAME%% *}
+
+if [[ -n $DPNAME && -n $HDMINAME ]]; then
+    choices="both\n${HDMINAME}\n${DPNAME}\neDP1080";
+else
+    if [[ -n $HDMINAME ]]; then; choices="${HDMINAME}\neDP1080"; fi;
+    if [[ -n $DPNAME ]]; then; choices="${DPNAME}\neDP1080"; fi;
+fi
+
+chosen=$(echo -e "$choices" | dmenu -m "0" -fn "noto:size=10" -nb "#222222" -nf "#bbbbbb" -sb "#005577" -sf "#eeeeee" -i)
+
+case "$chosen" in
+    both) if [[ -n $DPNAME && -n $HDMINAME ]]; then; xrandr --output $HDMINAME --off --output $DPNAME --off; fi ;;
+    $HDMINAME) if [[ -n $HDMINAME ]]; then; xrandr --output $HDMINAME --off; fi ;;
+    $DPNAME) if [[ -n $DPNAME ]]; then; xrandr --output $DPNAME --off; fi ;;
+    eDP1080) xrandr --output $eDPNAME --mode 1920x1080;;
+esac
+~/.fehbg

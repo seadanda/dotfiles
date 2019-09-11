@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+
+if [ -n "$1" ] && ! [ -f "$1" ]; then
+  echo -e "#!/usr/bin/env bash\nset -euo pipefail\nIFS=$'\\\n\\\t'" >> $1
+  chmod +x $1
+  echo "Created script $1"
+else
+  echo "File already exists"
+fi

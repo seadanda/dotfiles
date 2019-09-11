@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if $(setxkbmap -query | grep layout | grep -q ie); then
+  notify-send "Keyboard" "ru"
+  setxkbmap -layout ru
+else
+  notify-send "Keyboard" "ie"
+  setxkbmap -layout ie
+fi

@@ -1,0 +1,2 @@
+#!/bin/sh
+( dmenu_path | dmenu "$@" | ( read string; echo "$string" | ${SHELL:-"/bin/sh"} || firefox --new-window --search "${string}" ) ) &

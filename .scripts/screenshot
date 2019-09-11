@@ -1,0 +1,2 @@
+#!/bin/sh
+maim ~/Pictures/ss$(date +%Y%m%d_%H%M%S%n).jpg

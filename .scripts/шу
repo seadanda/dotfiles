@@ -1,0 +1,5 @@
+#!/bin/bash
+# emergency get out of russian keyboard layout
+# super+shift+enter then hit "ie" which comes up as шу
+notify-send "Keyboard" "ie"
+setxkbmap -layout ie

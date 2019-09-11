@@ -1,0 +1,11 @@
+[http]
+  emptyAuth = true
+[user]
+  name = Dónal Murray
+  email = donal.murray@cern.ch
+[url "https://github.com/"]
+  insteadOf = "gh:"
+[url "ssh://git@gitlab.cern.ch:7999/"]
+  insteadOf = "gl:"
+[url "https://aur.archlinux.org/"]
+  insteadOf = "aur:"

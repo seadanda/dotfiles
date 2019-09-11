@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+
+if [[ $# = 0 ]]; then
+    cat ~/.todo
+elif [[ $# = 2 ]] && [[ $1 = "-a" ]]; then
+        echo "$2" >> ~/.todo
+elif [[ $# = 2 ]] && [[ $1 = "-r" ]]; then
+    cat ~/.todo | grep -v $2 > ~/.todotemp
+    mv ~/.todotemp ~/.todo
+else
+    echo "Invalid parameter. Usage:"
+    echo "  todo                list items on todo list"
+    echo "  todo -a <item>      add item to todo list"
+    echo "  todo -r <item>      remove item from todo list"
+fi
