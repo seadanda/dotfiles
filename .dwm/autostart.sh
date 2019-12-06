@@ -4,3 +4,4 @@ slstatus &
 pulseaudio --start &
 dunst &
 pcmanfm -d &
+nm-applet &

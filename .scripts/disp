@@ -21,7 +21,7 @@ chosen=$(echo -e "$choices" | dmenu -m "0" -fn "noto:size=10" -nb "#222222" -nf 
 case "$chosen" in
     triple) if [[ -n $DPNAME && -n $HDMINAME ]]; then; xrandr --output $eDPNAME --mode 1920x1080 --output $HDMINAME --auto --right-of $eDPNAME --output $DPNAME --auto --right-of $HDMINAME; fi ;;
     $HDMINAME) if [[ -n $HDMINAME ]]; then; xrandr --output $eDPNAME --mode 1920x1080 --output $HDMINAME --mode 1920x1080 --right-of $eDPNAME; fi ;;
-    ${HDMINAME}proj) if [[ -n $HDMINAME ]]; then; xrandr --output $eDPNAME --mode 1920x1080 --output $HDMINAME --mode 1920x1080 --same-as $eDPNAME; fi ;;
+    ${HDMINAME}proj) if [[ -n $HDMINAME ]]; then; xrandr --output $eDPNAME --mode 1920x1080 --output $HDMINAME --auto --same-as $eDPNAME; fi ;;
     $DPNAME) if [[ -n $DPNAME ]]; then; xrandr --output $eDPNAME --mode 1920x1080 --output $DPNAME --auto --right-of $eDPNAME; fi ;;
     ${DPNAME}proj) if [[ -n $DPNAME ]]; then; xrandr --output $DPNAME --auto --same-as $eDPNAME; fi ;;
     eDP1080) xrandr --output $eDPNAME --auto ;;

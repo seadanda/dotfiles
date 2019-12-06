@@ -36,7 +36,7 @@ call vundle#begin()
   Plugin 'Yggdroot/indentLine'
   Plugin 'morhetz/gruvbox'
   Plugin 'vim-airline/vim-airline'
-  Plugin 'w0rp/ale'
+  Plugin 'dense-analysis/ale'
 call vundle#end()
 
 set noshowmode " let airline do this
@@ -115,7 +115,7 @@ vnoremap <leader>' c''<esc>P
 
 " autocomplete and lint
 let g:ale_linters = {'python': ['flake8', 'pyls'], 'shell': ['language-server'], 'vhdl': ['vcom']}
-let g:ale_vhdl_vcom_options = '-2008 -quiet -lint -work /home/donal/vhdevel/readout40-firmware/velo/data_processing/pre_router/simulation/libraries/work'
+let g:ale_vhdl_vcom_options = '-93 -quiet -lint -work /home/donal/vhdevel/readout40-firmware/velo/data_processing/pre_router/simulation/libraries/work'
 
 " theme
 "set termguicolors " kills italic comments!

@@ -50,6 +50,11 @@ alias cd..='cd ..'
 # ssh
 alias ckinit='kinit -f -p -r 168h dmurray@CERN.CH -k -t ~/.dmurray.keytab' #initialise cern krb5
 alias cvminit='VBoxManage startvm cernvm --type headless' #start cernvm
-alias cvmssh="ssh -Y cernvm"
+alias fvminit='VBoxManage startvm firmware --type headless' #start cernvm
+alias cvmssh="ssh -XY cernvm"
+alias fvmssh="ssh -XY fwvm"
 alias md2ssh='ssh -Y md2' #minidaq2
 alias lmdssh='ssh -Y lhcb-asus01 || ssh -YJ lxplus.cern.ch lhcb-asus01'
+
+# hyperjump
+source ~/.scripts/hyperjump
