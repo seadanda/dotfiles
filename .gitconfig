@@ -1,8 +1,10 @@
-[http]
-  emptyAuth = true
 [user]
   name = Dónal Murray
   email = donal.murray@cern.ch
+[diff]
+  tool = meld
+[http]
+  emptyAuth = true
 [url "https://github.com/"]
   insteadOf = "gh:"
 [url "ssh://git@gitlab.cern.ch:7999/"]
