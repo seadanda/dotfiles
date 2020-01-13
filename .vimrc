@@ -41,7 +41,7 @@ call vundle#end()
 
 set noshowmode " let airline do this
 let g:ale_completion_enabled = 1
-"let g:ale_python_flake8_options = '--ignore=E402,F403,F405,W504 --max-line-length=120'
+let g:ale_python_flake8_options = '--ignore=E402,F403,F405,W504 --max-line-length=120'
 
 filetype plugin on
 

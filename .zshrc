@@ -43,7 +43,6 @@ alias pacwarn='curl -s https://www.archlinux.org/feeds/news/ | xmllint --xpath /
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # typos
-alias :q='exit'
 alias ake='make' #because tmux waits for a character for too long after switching window
 alias cd..='cd ..'
 

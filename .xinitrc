@@ -28,7 +28,13 @@ else
   eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
   export SSH_AUTH_SOCK
 
-  # start dwm
+  # statusbar
+  while xsetroot -name "$(statusbar)"
+  do
+    sleep 1
+  done &
+
+  # wm
   exec dwm
 fi
 
