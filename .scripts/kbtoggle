@@ -2,9 +2,12 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-if $(setxkbmap -query | grep layout | grep -q ie); then
+if $(setxkbmap -query | grep layout | grep -q ie_ext); then
   notify-send "Keyboard" "ru"
   setxkbmap -layout ru
+elif $(setxkbmap -query | grep layout | grep -q ie); then
+  notify-send "Keyboard" "ie_ext"
+  setxkbmap -layout ie_ext
 else
   notify-send "Keyboard" "ie"
   setxkbmap -layout ie
