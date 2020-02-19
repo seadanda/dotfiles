@@ -57,3 +57,6 @@ alias lmdssh='ssh -Y lhcb-asus01 || ssh -YJ lxplus.cern.ch lhcb-asus01'
 
 # hyperjump
 source ~/.scripts/hyperjump
+
+#vhdevel
+alias velo_simchecker='pcie40_simchecker -c format.cfg -s odin.frgsim -f main.frgsim -t FE_data_new_encoding_read_from_text_0.txt | less -R'
