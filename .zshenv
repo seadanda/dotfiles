@@ -1,2 +1,2 @@
 typeset -U path
-path=(~/.scripts $path)
+path=(~/.local/bin ~/.scripts $path)

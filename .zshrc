@@ -39,6 +39,7 @@ alias ssh='ssh'
 alias wine64='WINEPREFIX=~/.wine64'
 alias rtv='rtv --enable-media'
 alias lscmd='ls ~/.scripts'
+alias yeet='yay -Rsn'
 alias pacwarn='curl -s https://www.archlinux.org/feeds/news/ | xmllint --xpath //item/title\ \|\ //item/pubDate /dev/stdin | sed -r -e "s:<title>([^<]*?)</title><pubDate>([^<]*?)</pubDate>:\2\t\1\n:g"'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
