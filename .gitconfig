@@ -1,6 +1,7 @@
 [user]
   name = Dónal Murray
   email = donal.murray@cern.ch
+  signingkey = CB348B1611893A10
 [diff]
   tool = meld
 [http]
@@ -11,3 +12,7 @@
   insteadOf = "gl:"
 [url "https://aur.archlinux.org/"]
   insteadOf = "aur:"
+[credential]
+  helper = cache --timeout=3600
+[pull]
+  rebase = false
