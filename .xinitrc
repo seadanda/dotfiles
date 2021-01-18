@@ -14,9 +14,9 @@ else
   if [[ -n $DPNAME && -n $HDMINAME ]]; then
     xrandr --output $eDPNAME --mode 1920x1080 --output $HDMINAME --auto --right-of $eDPNAME  --output $DPNAME --auto --right-of $HDMINAME
   elif [[ -n $DPNAME ]]; then
-    xrandr --output $eDPNAME --mode 1920x1080 --output $DPNAME --auto --right-of $eDPNAME 
+    xrandr --output $eDPNAME --mode 1920x1080 --output $DPNAME --auto --right-of $eDPNAME
   elif [[ -n $HDMINAME ]]; then
-    xrandr --output $eDPNAME --mode 1920x1080 --output $HDMINAME --auto --right-of $eDPNAME 
+    xrandr --output $eDPNAME --mode 1920x1080 --output $HDMINAME --auto --right-of $eDPNAME
   else
     xrandr --output $eDPNAME --mode 1920x1080
   fi
@@ -28,14 +28,20 @@ else
   eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
   export SSH_AUTH_SOCK
 
-  # statusbar
-  while xsetroot -name "$(statusbar)"
-  do
-    sleep 1
-  done &
+#  # statusbar
+#  while xsetroot -name "$(statusbar)"
+#  do
+#    sleep 1
+#  done &
+
+  # Fix misbehaving java windows
+  export AWT_TOOLKIT=MToolkit
 
   # wm
-  exec dwm
+  exec $HOME/.scripts/startdwm
+
+  # Fix misbehaving java windows - must be below dwm
+  wmname compiz
 fi
 
 

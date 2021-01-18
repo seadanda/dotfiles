@@ -1,0 +1,5 @@
+#!/bin/sh
+
+protonmail-bridge --no-window &
+thunderbird-beta &
+disown
